@@ -55,7 +55,11 @@
     //create post
     if($quo->create()) {
         echo json_encode(
-            array('message' => 'Quote Created')
+            array('message' => 'Quote Created',
+                    'id' => $quo->id,
+                    'quote' => $quo->quote,
+                    'author_id' => $quo->authId,
+                    'category_id' => $quo->catId)
         );
     } else {
 

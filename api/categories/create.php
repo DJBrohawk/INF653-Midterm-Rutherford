@@ -33,7 +33,9 @@
     //create post
     if($cat->create()) {
         echo json_encode(
-            array('message' => 'Category Created')
+            array('message' => 'Category Created',
+                    'id' => $cat->id,
+                    'category_id' => $cat->category)
         );
     } else {
 

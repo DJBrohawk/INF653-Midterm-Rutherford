@@ -46,7 +46,7 @@
     if($num > 0){
         //Author array
         $quo_arr = array();
-        $quo_arr['data'] = array();
+      //  $quo_arr['data'] = array();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
 
@@ -62,7 +62,7 @@
             );
 
             //push to "data"
-            array_push($quo_arr['data'], $quo_item);
+            array_push($quo_arr, $quo_item);
         }
 
         //turn to JSON

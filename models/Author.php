@@ -55,7 +55,7 @@
              //maybe need to set id here?
              $this->author = $row['author'];
              if($this->author === null){
-                echo json_encode(array('message' => 'author_id not found'));
+                echo json_encode(array('message' => 'author_id Not Found'));
                 exit();
              }
              

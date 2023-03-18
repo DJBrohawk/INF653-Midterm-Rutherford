@@ -42,12 +42,12 @@
 
     //use check ID functions to determine if ID passed in is in the database at all
     if(!$quo->checkCatId($quo->catId)) {
-        echo json_encode(array('message' => 'category_id Not Found'));
+        echo json_encode(array('message' => 'category_id Not Found'), JSON_FORCE_OBJECT);
         exit();
     }
 
     if(!$quo->checkAuthId($quo->authId)) {
-        echo json_encode(array('message' => 'author_id Not Found'));
+        echo json_encode(array('message' => 'author_id Not Found'), JSON_FORCE_OBJECT);
         exit();
     }
 
@@ -59,9 +59,7 @@
             array(  'id' => $quo->id,
                     'quote' => $quo->quote,
                     'author_id' => $quo->authId,
-                    'category_id' => $quo->catId
-                    
-                ));
+                    'category_id' => $quo->catId), JSON_FORCE_OBJECT);
     } else {
 
         echo json_encode(array('message' => 'Quote Not Created'));

@@ -40,6 +40,7 @@
     $quo->quote = $data->quote;
     $quo->id = $quo->getId() + 1;
 
+    //use check ID functions to determine if ID passed in is in the database at all
     if(!$quo->checkCatId($quo->catId)) {
         echo json_encode(array('message' => 'category_id Not Found'));
         exit();
@@ -52,7 +53,7 @@
 
     //echo $quo->id;
 
-    //create post
+    //create quote if function executes successfully
     if($quo->create()) {
         echo json_encode(
             array(  'id' => $quo->id,

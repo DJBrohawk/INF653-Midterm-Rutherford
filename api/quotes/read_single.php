@@ -85,7 +85,6 @@
         echo json_encode($test);
 
 
-    }
     } else {
 
         echo json_encode(

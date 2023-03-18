@@ -234,7 +234,7 @@
             $this->quote = htmlspecialchars(strip_tags($this->quote));
             $this->authId = htmlspecialchars(strip_tags($this->authId));
             $this->catId = htmlspecialchars(strip_tags($this->catId));
-            $this->id = htmlspecialchars(strip_tags($this->quote));
+            $this->id = htmlspecialchars(strip_tags($this->id));
             
             //Bind data
           

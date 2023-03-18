@@ -49,6 +49,7 @@
 
              $stmt->execute();
 
+             /*
              $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
              //set properties
@@ -58,6 +59,9 @@
                 echo json_encode(array('message' => 'author_id Not Found'));
                 exit();
              }
+             */
+
+             return $stmt;
              
         }
 

@@ -46,13 +46,15 @@
              $stmt->bindParam(':id', $this->id);
 
              $stmt->execute();
+            return $stmt;
 
+             /*
              $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
              //set properties
              //maybe need to set id here?
              $this->category = $row['category'];
-             
+             */
         }
 
         public function create(){

@@ -28,9 +28,6 @@
        
     );
 
-
-
-
         //make JSON, print_r prints array
         print_r(json_encode($auth_arr));
         */

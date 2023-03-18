@@ -25,12 +25,12 @@
 
     
     if(!$auth->checkId($auth->id)){
-        echo json_encode(array("message" => "author_id Not Found"));
+        echo json_encode(array('message' => 'author_id Not Found'));
         exit();
     }
 
     if(!isset($data->author)){
-        echo json_encode(array("message" => "Missing Required Parameters"));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 

@@ -31,17 +31,17 @@
     $quo->quote = $data->quote;
 
     if(!$quo->checkCatId($quo->catId)) {
-        echo json_encode(array("message" => "category_id Not Found"));
+        echo json_encode(array('message' => 'category_id Not Found'));
         exit();
     }
 
     if(!$quo->checkAuthId($quo->authId)) {
-        echo json_encode(array("message" => "author_id Not Found"));
+        echo json_encode(array('message' => 'author_id Not Found'));
         exit();
     }
 
     if(!$quo->checkId($quo->id)){
-        echo json_encode(array("message" => "id not found"));
+        echo json_encode(array('message' => 'id not found'));
         exit();
     }
 

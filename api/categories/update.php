@@ -24,12 +24,12 @@
     $cat->category = $data->category;
    
     if(!$cat->checkId($cat->id)){
-        echo json_encode(array("message" => "category_id Not Found"));
+        echo json_encode(array('message' => 'category_id Not Found'));
         exit();
     }
 
     if(!isset($cat->category)){
-        echo json_encode(array("message" => "Missing Required Parameters"));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 

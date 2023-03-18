@@ -61,8 +61,8 @@
            //turn to JSON
            echo json_encode(array(
 
-                 'id' => $id,
-                 'category' => $category     
+                 'id' => $row['id'],
+                 'category' => $row['category']     
 
            ));
    

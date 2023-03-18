@@ -43,7 +43,7 @@
 
     // Check if any quotes
 
-    if($num > 0){
+    if($num > 1){
         //Author array
         $quo_arr = array();
       //  $quo_arr['data'] = array();
@@ -69,6 +69,23 @@
         //turn to JSON
         echo json_encode($quo_arr);
 
+    }elseif ($num === 1){
+
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        extract($row);
+        //set properties
+
+        $test;
+
+        $test->author = $row['author'];
+        $test->quote = $row['quote'];
+        $test->id = $row['id'];
+        $test->category = $row['category'];
+    
+        echo json_encode($test);
+
+
+    }
     } else {
 
         echo json_encode(

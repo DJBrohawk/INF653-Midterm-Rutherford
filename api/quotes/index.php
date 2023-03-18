@@ -47,4 +47,3 @@ header('Access-Control-Allow-Origin: *');
     }
 
 ?>
-<h1>Caleb Rutherford</h1>

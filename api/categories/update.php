@@ -19,19 +19,24 @@
     //get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    //Set ID to update
-    $cat->id = $data->id;
-    $cat->category = $data->category;
+    if(!isset($data->category)){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
+        exit();
+    }
    
     if(!$cat->checkId($cat->id)){
         echo json_encode(array('message' => 'category_id Not Found'));
         exit();
     }
 
-    if(!isset($cat->category)){
-        echo json_encode(array('message' => 'Missing Required Parameters'));
-        exit();
-    }
+
+
+    //Set ID to update
+    $cat->id = $data->id;
+    $cat->category = $data->category;
+
+   
+    
 
     //create post
     if($cat->update()) {

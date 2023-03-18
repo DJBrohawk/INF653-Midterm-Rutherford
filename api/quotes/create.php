@@ -41,12 +41,12 @@
     $quo->id = $quo->getId() + 1;
 
     if(!$quo->checkCatId($quo->catId)) {
-        echo json_encode(array("message" => "category_id Not Found"));
+        echo json_encode(array('message' => 'category_id Not Found'));
         exit();
     }
 
     if(!$quo->checkAuthId($quo->authId)) {
-        echo json_encode(array("message" => "author_id Not Found"));
+        echo json_encode(array('message' => 'author_id Not Found'));
         exit();
     }
 
@@ -58,8 +58,9 @@
             array(  'id' => $quo->id,
                     'quote' => $quo->quote,
                     'author_id' => $quo->authId,
-                    'category_id' => $quo->catId)
-        );
+                    'category_id' => $quo->catId
+                    
+                ));
     } else {
 
         echo json_encode(array('message' => 'Quote Not Created'));

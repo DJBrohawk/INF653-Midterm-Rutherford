@@ -34,7 +34,7 @@
     if($cat->create()) {
         echo json_encode(
             array(  'id' => $cat->id,
-                    'category_id' => $cat->category)
+                    'category' => $cat->category)
         );
     } else {
 

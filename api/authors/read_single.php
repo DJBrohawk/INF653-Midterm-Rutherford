@@ -47,7 +47,7 @@
      
       //  $quo_arr['data'] = array();
 
-      $row = $result->fetch(PDO::FETCH_ASSOC)
+      $row = $result->fetch(PDO::FETCH_ASSOC);
 
             extract($row);
 

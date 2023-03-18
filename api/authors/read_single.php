@@ -55,7 +55,7 @@
         echo json_encode(array(
            
             'id' => $row['id'],
-            'author' => $row['author'];    
+            'author' => $row['author']    
 
         ));
 

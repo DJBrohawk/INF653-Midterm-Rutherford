@@ -30,7 +30,8 @@
     //create post
     if($cat->delete()) {
         echo json_encode(
-            array('message' => 'Category Deleted')
+            array('message' => 'Category Deleted',
+            'id' => $cat->id)
         );
     } else {
 

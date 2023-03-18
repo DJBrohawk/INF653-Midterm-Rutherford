@@ -20,7 +20,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     if ( !isset($data->authorId) || !isset($data->categoryId) || !isset($data->id) || !isset($data->quote)) {
-        echo json_encode(array('message' => 'Missing Required Parameters: Please include an authorId, categoryId, id, and quote.'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
@@ -31,12 +31,12 @@
     $quo->quote = $data->quote;
 
     if(!$quo->checkCatId($quo->catId)) {
-        echo json_encode(array("message" => "category_id not found"));
+        echo json_encode(array("message" => "category_id Not Found"));
         exit();
     }
 
     if(!$quo->checkAuthId($quo->authId)) {
-        echo json_encode(array("message" => "author_id not found"));
+        echo json_encode(array("message" => "author_id Not Found"));
         exit();
     }
 
@@ -50,7 +50,11 @@
 
         
         echo json_encode(
-            array('message' => 'Quote Updated')
+            array('message' => 'Quote Updated',
+                    'id' => $quo->id,
+                    'author_id' => $quo->authId,
+                    'category_id' => $quo->catId,
+                    'quote' => $quo->quote)
         );
     } else {
 

@@ -36,7 +36,9 @@
     //create post
     if($cat->update()) {
         echo json_encode(
-            array('message' => 'Category Updated')
+            array('message' => 'Category Updated',
+                    'id' => $cat->id,
+                    'category' => $cat->category)
         );
     } else {
 

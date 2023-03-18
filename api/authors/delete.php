@@ -30,7 +30,8 @@
     //create post
     if($auth->delete()) {
         echo json_encode(
-            array('message' => 'Author Deleted')
+            array('message' => 'Author Deleted',
+            'id' => $auth->id)
         );
     } else {
 

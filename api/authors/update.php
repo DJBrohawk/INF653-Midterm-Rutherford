@@ -37,7 +37,10 @@
     //create post
     if($auth->update()) {
         echo json_encode(
-            array('message' => 'Author Updated')
+            array('message' => 'Author Updated',
+                    'id' => $auth->id,
+                    'author' => $auth->author
+            )
         );
     } else {
 

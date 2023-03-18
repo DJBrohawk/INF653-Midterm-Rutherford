@@ -30,7 +30,8 @@
     //create post
     if($quo->delete()) {
         echo json_encode(
-            array('message' => 'Quote Deleted')
+            array('message' => 'Quote Deleted',
+                    'id' => $quo->id)
         );
     } else {
 

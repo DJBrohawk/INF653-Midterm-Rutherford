@@ -17,7 +17,7 @@
     $cat->id = isset($_GET['id']) ? $_GET['id'] : die();
 
     
-
+/*
     //get author
     $cat->read_single();
 
@@ -37,6 +37,46 @@
         //make JSON, print_r prints array
         print_r(json_encode($cat_arr));
 
-    } 
+    } */
+
+
+       //get author
+       $result = $cat->read_single();
+
+       //create array
+   
+       $num = $result->rowcount();
+   
+       // Check if any quotes
+   
+       if($num > 0){
+           //Author array
+           $cat_arr = array();
+         //  $quo_arr['data'] = array();
+   
+           while($row = $result->fetch(PDO::FETCH_ASSOC)){
+   
+               extract($row);
+   
+               $cat_item = array(
+   
+                   'id' => $id,
+                   'category' => $category      
+   
+               );
+   
+               //push to "data"
+               array_push($cat_arr, $cat_item);
+           }
+   
+           //turn to JSON
+           echo json_encode($cat_arr);
+   
+       } else {
+   
+           echo json_encode(
+               array('message' => 'category_id Not Found')
+           );
+       }
 
     ?>

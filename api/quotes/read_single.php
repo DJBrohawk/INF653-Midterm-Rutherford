@@ -80,7 +80,7 @@
                 'id' => $row['id'],
                 'quote' => $row['quote'],
                 'author' => $row['author'],
-                'category' => $row['author']
+                'category' => $row['category']
 
         ));
 

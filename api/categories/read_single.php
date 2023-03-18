@@ -50,27 +50,21 @@
        // Check if any quotes
    
        if($num > 0){
-           //Author array
-           $cat_arr = array();
+           //Author arra
          //  $quo_arr['data'] = array();
    
-           while($row = $result->fetch(PDO::FETCH_ASSOC)){
+       $row = $result->fetch(PDO::FETCH_ASSOC)
    
                extract($row);
    
-               $cat_item = array(
-   
-                   'id' => $id,
-                   'category' => $category      
-   
-               );
-   
-               //push to "data"
-               array_push($cat_arr, $cat_item);
-           }
-   
+
            //turn to JSON
-           echo json_encode($cat_arr);
+           echo json_encode(array(
+
+                 'id' => $id,
+                 'category' => $category     
+
+           ));
    
        } else {
    

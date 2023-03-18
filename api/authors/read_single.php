@@ -44,26 +44,20 @@
 
     if($num > 0){
         //Author array
-        $auth_arr = array();
+     
       //  $quo_arr['data'] = array();
 
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+      $row = $result->fetch(PDO::FETCH_ASSOC)
 
             extract($row);
 
-            $auth_item = array(
-
-                'id' => $id,
-                'author' => $author      
-
-            );
-
-            //push to "data"
-            array_push($auth_arr, $auth_item);
-        }
-
         //turn to JSON
-        echo json_encode($auth_arr);
+        echo json_encode(array(
+           
+            'id' => $id,
+            'author' => $author    
+
+        ));
 
     } else {
 

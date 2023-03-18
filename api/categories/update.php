@@ -41,7 +41,7 @@
     //create post
     if($cat->update()) {
         echo json_encode(
-            array()
+            array(
                     'id' => $cat->id,
                     'category' => $cat->category)
         );

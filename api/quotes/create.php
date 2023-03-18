@@ -20,17 +20,17 @@
     $data = json_decode(file_get_contents("php://input"));
 
     if ( !isset($data->authorId)) {
-        echo json_encode(array('message' => 'author_id parameter not found, please include data using parameter authorId.'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
     if ( !isset($data->categoryId)) {
-        echo json_encode(array('message' => 'category_id parameter not found, please include data using parameter categoryId.'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
     if ( !isset($data->quote)){
-        echo json_encode(array('message' => 'Quote parameter not found, please include data using quote parameter.'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
@@ -41,12 +41,12 @@
     $quo->id = $quo->getId() + 1;
 
     if(!$quo->checkCatId($quo->catId)) {
-        echo json_encode(array("message" => "category_id not found"));
+        echo json_encode(array("message" => "category_id Not Found"));
         exit();
     }
 
     if(!$quo->checkAuthId($quo->authId)) {
-        echo json_encode(array("message" => "author_id not found"));
+        echo json_encode(array("message" => "author_id Not Found"));
         exit();
     }
 
@@ -55,8 +55,7 @@
     //create post
     if($quo->create()) {
         echo json_encode(
-            array('message' => 'Quote Created',
-                    'id' => $quo->id,
+            array(  'id' => $quo->id,
                     'quote' => $quo->quote,
                     'author_id' => $quo->authId,
                     'category_id' => $quo->catId)

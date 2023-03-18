@@ -50,7 +50,7 @@
 
         
         echo json_encode(
-            array('message' => 'Quote Updated',
+            array(
                     'id' => $quo->id,
                     'author_id' => $quo->authId,
                     'category_id' => $quo->catId,

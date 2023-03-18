@@ -25,20 +25,19 @@
 
     
     if(!$auth->checkId($auth->id)){
-        echo json_encode(array("message" => "id not found"));
+        echo json_encode(array("message" => "author_id Not Found"));
         exit();
     }
 
     if(!isset($data->author)){
-        echo json_encode(array("message" => "author parameter not set"));
+        echo json_encode(array("message" => "Missing Required Parameters"));
         exit();
     }
 
     //create post
     if($auth->update()) {
         echo json_encode(
-            array('message' => 'Author Updated',
-                    'id' => $auth->id,
+            array(  'id' => $auth->id,
                     'author' => $auth->author
             )
         );

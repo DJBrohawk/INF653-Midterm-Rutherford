@@ -24,19 +24,19 @@
     $cat->category = $data->category;
    
     if(!$cat->checkId($cat->id)){
-        echo json_encode(array("message" => "id not found"));
+        echo json_encode(array("message" => "category_id Not Found"));
         exit();
     }
 
     if(!isset($cat->category)){
-        echo json_encode(array("message" => "category parameter not set"));
+        echo json_encode(array("message" => "Missing Required Parameters"));
         exit();
     }
 
     //create post
     if($cat->update()) {
         echo json_encode(
-            array('message' => 'Category Updated',
+            array()
                     'id' => $cat->id,
                     'category' => $cat->category)
         );

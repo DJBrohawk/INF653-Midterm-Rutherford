@@ -74,15 +74,15 @@
         $row = $result->fetch(PDO::FETCH_ASSOC);
         extract($row);
         //set properties
-
-        $test;
-
-        $test->author = $row['author'];
-        $test->quote = $row['quote'];
-        $test->id = $row['id'];
-        $test->category = $row['category'];
     
-        echo json_encode($test);
+        echo json_encode(array(
+
+                'id' => $row['id'],
+                'quote' => $row['quote'],
+                'author' => $row['author'],
+                'category' => $row['author']
+
+        ));
 
 
     } else {

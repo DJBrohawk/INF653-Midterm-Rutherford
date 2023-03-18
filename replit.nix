@@ -1,1 +1,10 @@
-{ pkgs }: { deps = [ pkgs.php82 ]; }
+{ pkgs }: { 
+
+deps = 
+[ 
+
+pkgs.php82 
+
+]; 
+
+}

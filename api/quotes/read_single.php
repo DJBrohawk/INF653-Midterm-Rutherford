@@ -55,9 +55,10 @@
             $quo_item = array(
 
                 'id' => $id,
+                'quote' => $quote,
                 'author' => $author,
-                'category' => $category,
-                'quote' => $quote
+                'category' => $category
+             
 
             );
 

@@ -19,12 +19,12 @@
     //get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    if ( !isset($data->authorId)) {
+    if ( !isset($data->author_id)) {
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
-    if ( !isset($data->categoryId)) {
+    if ( !isset($data->category_id)) {
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
@@ -35,8 +35,8 @@
     }
 
     //put data from raw posted data into quote object
-    $quo->authId = $data->authorId;
-    $quo->catId = $data->categoryId;
+    $quo->authId = $data->author_id;
+    $quo->catId = $data->category_id;
     $quo->quote = $data->quote;
     $quo->id = $quo->getId() + 1;
 

@@ -19,15 +19,15 @@
     //get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    if ( !isset($data->authorId) || !isset($data->categoryId) || !isset($data->id) || !isset($data->quote)) {
+    if ( !isset($data->author_id) || !isset($data->category_id) || !isset($data->id) || !isset($data->quote)) {
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
     //Set ID to update
     $quo->id = $data->id;
-    $quo->authId = $data->authorId;
-    $quo->catId = $data->categoryId;
+    $quo->authId = $data->author_id;
+    $quo->catId = $data->category_id;
     $quo->quote = $data->quote;
 
     if(!$quo->checkCatId($quo->catId)) {
@@ -41,7 +41,7 @@
     }
 
     if(!$quo->checkId($quo->id)){
-        echo json_encode(array('message' => 'id not found'));
+        echo json_encode(array('message' => 'No Quotes Found'));
         exit();
     }
 
@@ -54,7 +54,7 @@
                     'id' => $quo->id,
                     'author_id' => $quo->authId,
                     'category_id' => $quo->catId,
-                    'quote' => $quo->quote)
+                    'quote' => $quo->quote), JSON_FORCE_OBJECT
         );
     } else {
 

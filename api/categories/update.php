@@ -43,7 +43,7 @@
         echo json_encode(
             array(
                     'id' => $cat->id,
-                    'category' => $cat->category)
+                    'category' => $cat->category), JSON_FORCE_OBJECT
         );
     } else {
 

@@ -24,6 +24,13 @@
         exit();
     }
    
+
+     //Set ID to update
+     $cat->id = $data->id;
+     $cat->category = $data->category;
+
+
+
     if(!$cat->checkId($cat->id)){
         echo json_encode(array('message' => 'category_id Not Found'));
         exit();
@@ -31,9 +38,7 @@
 
 
 
-    //Set ID to update
-    $cat->id = $data->id;
-    $cat->category = $data->category;
+   
 
    
     

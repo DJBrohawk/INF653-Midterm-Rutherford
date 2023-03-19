@@ -20,13 +20,15 @@
     $data = json_decode(file_get_contents("php://input"));
 
     //Set ID to update
-    $auth->id = $data->id;
-    $auth->author = $data->author;
-
+    
     if(!isset($data->author)){
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
+
+    $auth->id = $data->id;
+    $auth->author = $data->author;
+
 
     /*if(!isset($data->id)){
         echo json_encode(array('message' => 'Missing Required Parameters'));
